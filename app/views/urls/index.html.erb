@@ -1,0 +1,17 @@
+<h1>Url Shortener</h1>
+
+
+<%= form_for @url do |f| %>
+   <%= f.label :old_url %>
+   <br>
+   <%= f.text_field :old_url %>
+   <br>
+   <%= f.submit %>
+<% end %>
+
+<h1>New URL</h1>
+
+<% @urls.each do |i| %>
+  <%= link_to "/url/#{i.new_url}", new_url_path(i) %>
+  <br>
+<% end %>
